@@ -67,12 +67,15 @@ export async function POST(request) {
     const bid = result[0];
 
     // Send notification email
-    const emailResult = await resend.emails.send({
-      from: process.env.EMAIL_FROM,
-      to: [process.env.BID_NOTIFICATION_EMAIL],
-      replyTo: email || undefined,
-      subject: `🔔 New Motorcycle Bid - ${unit_name || "CCFI Unit"}`,
-      html: `
+   const emailResult = await resend.emails.send({
+  from: process.env.EMAIL_FROM,
+  to: [
+    "markadrian1211@gmail.com",
+    "jasonsalamida06@gmail.com"
+  ],
+  replyTo: email || undefined,
+  subject: `🔔 New Motorcycle Bid - ${unit_name || "CCFI Unit"}`,
+  html: `
         <div style="font-family: Arial, sans-serif; max-width: 650px; margin: auto;">
           
           <div style="background:#111827; padding:25px; color:white;">
